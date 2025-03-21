@@ -1,0 +1,41 @@
+<!-- <mat-card>
+  <h2>Upload Email Files</h2>
+  <input type="file" multiple (change)="onFileSelected($event)" />
+
+  <button mat-raised-button color="primary" (click)="uploadFiles()" [disabled]="isUploading">
+    Upload
+  </button>
+
+  <mat-progress-bar *ngIf="isUploading" mode="determinate" [value]="progress"></mat-progress-bar>
+</mat-card> -->
+
+<div style="padding: 20px;">
+  <h2>Bulk File Upload</h2>
+
+  <div style="border: 2px dashed #ccc; padding: 50px; text-align: center; margin-bottom: 20px;"
+       (dragover)="handleDragOver($event)"
+       (drop)="handleDrop($event)">
+    <p>Drag and drop files here, or click to select files.</p>
+    <input type="file" #fileInput style="display: none;" multiple (change)="handleFileInput($event)">
+    <button mat-raised-button color="primary" (click)="fileInput.click()">Select Files</button>
+  </div>
+
+  <div *ngIf="files.length > 0">
+    <h3>Selected Files:</h3>
+    <ul>
+      <li *ngFor="let file of files">{{ file.name }}</li>
+    </ul>
+  </div>
+
+  <button mat-raised-button color="accent" (click)="processFiles()" [disabled]="processing || files.length === 0">
+    <span *ngIf="!processing">Process</span>
+    <span *ngIf="processing">Processing...</span>
+    <mat-icon *ngIf="processing" style="margin-left: 8px;">refresh</mat-icon>
+  </button>
+
+  <mat-progress-bar *ngIf="processing" mode="indeterminate" style="margin-top: 10px;"></mat-progress-bar>
+
+  <div *ngIf="processComplete">
+    <p>Processing Complete!</p>
+  </div>
+</div>
