@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="header-section">
+    <h1 class="enterprise-title">Email Classification & Data Extraction</h1>
+    <p class="enterprise-subtitle">Streamline your email data management with our robust system.</p>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="file-upload-section">
+      <app-file-upload (filesProcessed)="onFilesProcessed($event)"></app-file-upload>
+    </div>
+
+    <div class="results-section">
+      <div *ngIf="isProcessing" class="loading">
+        <p>Processing emails...</p>
+      </div>
+      <app-email-results [emailResponses]="emailResults"></app-email-results>
+    </div>
+  </div>
+</div>

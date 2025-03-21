@@ -1,0 +1,39 @@
+/* app-email-results.component.css */
+
+table {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+td, th {
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+.table-container {
+  width: 100%;
+}
+
+/* Responsive column widths */
+@media (max-width: 768px) { /* Adjust breakpoint as needed */
+  td, th {
+    width: auto; /* Allow columns to shrink on smaller screens */
+  }
+
+  /* Optional: Adjust specific column widths on smaller screens */
+  th:nth-child(1), td:nth-child(1) { /* Email column */
+    width: 30%; /* Example: Make email column 30% on smaller screens */
+  }
+
+  th:nth-child(2), td:nth-child(2) { /* Status column */
+    width: 20%; /* Example: Make status column 20% on smaller screens */
+  }
+
+  th:nth-child(3), td:nth-child(3) { /* Message column */
+    width: 50%; /* Example: Make message column 50% on smaller screens */
+  }
+}
