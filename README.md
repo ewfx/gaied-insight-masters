@@ -31,7 +31,7 @@ This application provides a streamlined solution for managing and understanding 
 
 ---
 
-🖼️ Test Artifacts Screenshots:
+## 🖼️ Test Artifacts Screenshots:
 
 ![Screenshot 1](artifacts/demo/screenshot1.png)
 ![Screenshot 2](artifacts/demo/screenshot2.png)
@@ -109,6 +109,7 @@ Issue: The Gemini API incurs costs per request, making scalability expensive.
 
 Solution: Implemented hybrid models (smaller local models + Gemini API for complex cases).
 
+---
 ## BACKEND API
 ## 🏃 How to Run Backend code
 1. Clone the repository  
@@ -168,7 +169,7 @@ After making changes, push them to GitHub:
  git commit -m "Updated project files"
  git push origin main
 ```
-
+---
 ### Frontend UI(Angular)
 1. Clone the repository  
    ```sh
@@ -187,6 +188,8 @@ After making changes, push them to GitHub:
     ```sh
      Open UI: [http://localhost:4200/]
    ```
+
+---
 ## 👥 Team
 - **Vivek Vishal** - [GitHub](#) | [LinkedIn](#)
 - **Teammate 2** - [GitHub](#) | [LinkedIn](#)
