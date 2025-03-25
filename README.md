@@ -26,12 +26,13 @@ This application provides a streamlined solution for managing and understanding 
 
  Now, we can test the Email Processing API, which is deployed at the following link: 
 [https://vivek0912-genaiemailclassification.hf.space/docs]
+---
 
-🖼️ Screenshots:
+🖼️ Test Artifacts Screenshots:
 
 ![Screenshot 1](artifacts/demo/screenshot1.png)
 ![Screenshot 2](artifacts/demo/screenshot2.png)
-![Screenshot 3](artifacts/demo/screenshot3.png)
+![Screenshot 3](artifacts/demo/Screenshot3.png)
 ![Screenshot 4](artifacts/demo/screenshot4.png)
 ![Screenshot 5](artifacts/demo/screenshot5.png)
 
