@@ -192,4 +192,4 @@ After making changes, push them to GitHub:
 ---
 ## 👥 Team
 - **Vivek Vishal** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- **Dharmendar Potlaplli** - [GitHub](#) | [LinkedIn](#)
