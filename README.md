@@ -16,16 +16,19 @@
 ## 🎯 Introduction
 This application provides a streamlined solution for managing and understanding email data. It allows users to classify emails and extract relevant information through two primary methods: uploading email files directly or processing emails located in a pre-configured server directory. The results of the classification are displayed in an easy-to-read grid format.
 
+---
 
 ## Getting Started
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
 📹 [Clieck me for Video Demo](https://drive.google.com/file/d/1xkrMITqHK2_loJ2AMb7FmfDHPI5fhmij/view?usp=drive_link) (if applicable)  
 
+---
 ## API Server Url
 
  Now, we can test the Email Processing API, which is deployed at the following link: 
 [https://vivek0912-genaiemailclassification.hf.space/docs]
+
 ---
 
 🖼️ Test Artifacts Screenshots:
@@ -33,13 +36,15 @@ This application provides a streamlined solution for managing and understanding 
 ![Screenshot 1](artifacts/demo/screenshot1.png)
 ![Screenshot 2](artifacts/demo/screenshot2.png)
 ![Screenshot 3](artifacts/demo/Screenshot3.png)
-![Screenshot 4](artifacts/demo/screenshot4.png)
+![Screenshot 4](artifacts/demo/screenshot4.jpg)
 ![Screenshot 5](artifacts/demo/screenshot5.png)
 
+---
 
 ## 💡 Inspiration
 What inspired you to create this project? Describe the problem you're solving.
 
+---
 ## ⚙️ What It Does
 * **Email File Upload:** Users can upload one or more email files (supporting `.eml`, `.msg`, `.txt` formats) directly through the web interface for immediate processing and classification.
 * **Directory Processing:** The application can be configured to automatically process all email files within a specific server directory. This feature is ideal for handling large volumes of emails or for automated background processing.
@@ -50,6 +55,7 @@ What inspired you to create this project? Describe the problem you're solving.
 * **Clear Results Display:** Presents the classification results in a user-friendly grid table, showing key information like sender, subject, predicted request type, sub-request type, confidence score, and duplicate status.
 * **Loading Indicator:** Provides visual feedback during the email processing to keep users informed of the application's status.
 
+---
 ## 🛠️ How We Built It
 Briefly outline the technologies, frameworks, and tools used in development.
 - 🔹 Frontend: Angular
@@ -59,6 +65,7 @@ Briefly outline the technologies, frameworks, and tools used in development.
 - 🔹 Uvicorn: (ASGI Server)
 - 🔹 Scikit-learn & Pandas: (Data Processing)
 
+---
 ## 🚧 Challenges We Faced
 🔹 Technical Challenges
 1️⃣ API Rate Limits & Quotas
