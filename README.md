@@ -16,16 +16,6 @@
 ## 🎯 Introduction
 This application provides a streamlined solution for managing and understanding email data. It allows users to classify emails and extract relevant information through two primary methods: uploading email files directly or processing emails located in a pre-configured server directory. The results of the classification are displayed in an easy-to-read grid format.
 
-## Features
-
-* **Email File Upload:** Users can upload one or more email files (supporting `.eml`, `.msg`, `.txt` formats) directly through the web interface for immediate processing and classification.
-* **Directory Processing:** The application can be configured to automatically process all email files within a specific server directory. This feature is ideal for handling large volumes of emails or for automated background processing.
-* **Intelligent Classification:** Utilizes advanced models (potentially leveraging Gemini AI as indicated in the code) to categorize emails based on their content, subject, and attachments.
-* **Data Extraction:** Extracts key information from emails, including sender, subject, and potentially other relevant data points.
-* **Confidence Scoring:** Provides a confidence score for each classification, indicating the reliability of the prediction.
-* **Duplicate Detection:** Identifies and flags potential duplicate emails based on their content.
-* **Clear Results Display:** Presents the classification results in a user-friendly grid table, showing key information like sender, subject, predicted request type, sub-request type, confidence score, and duplicate status.
-* **Loading Indicator:** Provides visual feedback during the email processing to keep users informed of the application's status.
 
 ## Getting Started
 ## 🎥 Demo
@@ -39,10 +29,23 @@ This application provides a streamlined solution for managing and understanding 
 What inspired you to create this project? Describe the problem you're solving.
 
 ## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+* **Email File Upload:** Users can upload one or more email files (supporting `.eml`, `.msg`, `.txt` formats) directly through the web interface for immediate processing and classification.
+* **Directory Processing:** The application can be configured to automatically process all email files within a specific server directory. This feature is ideal for handling large volumes of emails or for automated background processing.
+* **Intelligent Classification:** Utilizes advanced models (potentially leveraging Gemini AI as indicated in the code) to categorize emails based on their content, subject, and attachments.
+* **Data Extraction:** Extracts key information from emails, including sender, subject, and potentially other relevant data points.
+* **Confidence Scoring:** Provides a confidence score for each classification, indicating the reliability of the prediction.
+* **Duplicate Detection:** Identifies and flags potential duplicate emails based on their content.
+* **Clear Results Display:** Presents the classification results in a user-friendly grid table, showing key information like sender, subject, predicted request type, sub-request type, confidence score, and duplicate status.
+* **Loading Indicator:** Provides visual feedback during the email processing to keep users informed of the application's status.
 
 ## 🛠️ How We Built It
 Briefly outline the technologies, frameworks, and tools used in development.
+- 🔹 Frontend: Angular
+- 🔹 Backend:  FastAPI / 
+- 🔹 Database: PostgreSQL / Firebase
+- 🔹 Other: GEMINI
+- 🔹 Uvicorn: (ASGI Server)
+- 🔹 Scikit-learn & Pandas: (Data Processing)
 
 ## 🚧 Challenges We Faced
 🔹 Technical Challenges
