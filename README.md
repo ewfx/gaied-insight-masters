@@ -1,4 +1,4 @@
-# 🚀 Project Name
+# 🚀Email Classification & Data Extraction Application
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -14,8 +14,20 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
+This application provides a streamlined solution for managing and understanding email data. It allows users to classify emails and extract relevant information through two primary methods: uploading email files directly or processing emails located in a pre-configured server directory. The results of the classification are displayed in an easy-to-read grid format.
 
+## Features
+
+* **Email File Upload:** Users can upload one or more email files (supporting `.eml`, `.msg`, `.txt` formats) directly through the web interface for immediate processing and classification.
+* **Directory Processing:** The application can be configured to automatically process all email files within a specific server directory. This feature is ideal for handling large volumes of emails or for automated background processing.
+* **Intelligent Classification:** Utilizes advanced models (potentially leveraging Gemini AI as indicated in the code) to categorize emails based on their content, subject, and attachments.
+* **Data Extraction:** Extracts key information from emails, including sender, subject, and potentially other relevant data points.
+* **Confidence Scoring:** Provides a confidence score for each classification, indicating the reliability of the prediction.
+* **Duplicate Detection:** Identifies and flags potential duplicate emails based on their content.
+* **Clear Results Display:** Presents the classification results in a user-friendly grid table, showing key information like sender, subject, predicted request type, sub-request type, confidence score, and duplicate status.
+* **Loading Indicator:** Provides visual feedback during the email processing to keep users informed of the application's status.
+
+## Getting Started
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
@@ -33,28 +45,126 @@ Explain the key features and functionalities of your project.
 Briefly outline the technologies, frameworks, and tools used in development.
 
 ## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+🔹 Technical Challenges
+1️⃣ API Rate Limits & Quotas
+Issue: The Google Gemini API has request rate limits, restricting the number of emails processed per minute.
 
-## 🏃 How to Run
+Solution: Implemented batch processing and cached responses to minimize API calls.
+
+2️⃣ Handling Long Emails (Token Limit)
+Issue: Gemini models have input token limits, causing issues with long emails.
+
+Solution: Used text summarization before classification to reduce input size.
+
+3️⃣ Model Output Variability
+Issue: Gemini sometimes generates inconsistent or ambiguous classifications.
+
+Solution: Used structured prompting and few-shot learning to improve reliability.
+
+4️⃣ Latency in Real-Time Classification
+Issue: API-based models introduce a delay in processing, especially for bulk emails.
+
+Solution: Optimized request handling and considered local inference with Gemini Nano.
+
+5️⃣ Security & Compliance
+Issue: Sending email data to a cloud-based API raised privacy concerns.
+
+Solution: Used data anonymization before processing emails.
+
+🔹 Non-Technical Challenges
+1️⃣ Understanding Business Requirements
+Issue: Stakeholders had different expectations for email classification categories.
+
+Solution: Conducted requirement workshops to finalize label categories (Spam, Urgent, Business, Phishing, etc.).
+
+2️⃣ User Trust in AI Predictions
+Issue: Some users doubted the accuracy of AI-based classification.
+
+Solution: Provided explainability by adding confidence scores in responses.
+
+3️⃣ Cost Management
+Issue: The Gemini API incurs costs per request, making scalability expensive.
+
+Solution: Implemented hybrid models (smaller local models + Gemini API for complex cases).
+
+## BACKEND API
+## 🏃 How to Run Backend code
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/your-username/gen_ai_email_processing.git](https://github.com/ewfx/gaied-insight-masters.git)
+   cd gaied-insight-masters\code\backend
+   ```
+2. Create a Virtual Environment
+ ```sh
+   python -m venv backend_env
+   backend_env\Scripts\activate    # On Windows
+  ```
+4. Install dependencies  
+   ```sh
+   pip install --upgrade pip
+   pip install -r requirements.txt
+   ```
+5. Run the project  
+   ```sh
+   uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+   ```
+6. Access the API Documentation
+    ```sh
+     Open Swagger UI: [http://127.0.0.1:8000/docs]
+   ```
+## 📬 API Endpoints
+| Method |     Endpoint              | Description              |
+|--------|---------------------------|--------------------------|
+| POST   | `/process-emails-uploadl` | Upload and process email |
+| GET    | `/process-email-directory`| process email on go      |
+
+## 🏗️ Tech Stack
+- 🔹 Frontend: Angular
+- 🔹 Backend:  FastAPI / 
+- 🔹 Database: PostgreSQL / Firebase
+- 🔹 Other: GEMINI
+- 🔹 Uvicorn: (ASGI Server)
+- 🔹 Scikit-learn & Pandas: (Data Processing)
+## 🛠 Environment Variables
+Create a `.env` file in the **config/** directory and add the necessary settings:
+```ini
+MODEL_PATH=gemini-2.0-flash-lite
+```
+---
+
+## 🔄 Updating the Project
+If you pull new changes from GitHub, remember to update dependencies:
+```sh
+ git pull origin main
+ pip install -r requirements.txt
+```
+---
+## 📤 Pushing the Project to GitHub
+After making changes, push them to GitHub:
+```sh
+ git add .
+ git commit -m "Updated project files"
+ git push origin main
+```
+
+### Frontend UI(Angular)
+1. Clone the repository  
+   ```sh
+   git clone https://github.com/your-username/gen_ai_email_processing.git](https://github.com/ewfx/gaied-insight-masters.git)
+   cd gaied-insight-masters\code\frontend
    ```
 2. Install dependencies  
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   npm install
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   ng serve/npm start
    ```
-
-## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
-
+4. Access the API Documentation
+    ```sh
+     Open UI: [http://localhost:4200/]
+   ```
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
+- **Vivek Vishal** - [GitHub](#) | [LinkedIn](#)
 - **Teammate 2** - [GitHub](#) | [LinkedIn](#)
