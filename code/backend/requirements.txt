@@ -14,3 +14,4 @@ pypdf==5.4.0
 langchain==0.3.21
 python-dotenv
 PyPDF2
+google.generativeai
