@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of, throwError } from 'rxjs';
 import { EmailResponse } from '../emailresponse.model';
+import { environment } from '../../environment/environment';
 
 
 @Injectable({
@@ -9,8 +10,8 @@ import { EmailResponse } from '../emailresponse.model';
 })
 
 export class EmailService {
-  private baseUrl = 'http://127.0.0.1:8000/api/';  // FastAPI Backend URL
-
+  // private baseUrl = 'http://127.0.0.1:8000/api/';  // FastAPI Backend URL
+  private baseUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) {}
   uploadFiles(formData: FormData): Observable<EmailResponse[]> {
     return this.http.post<EmailResponse[]>(this.baseUrl + 'process-emails-upload', formData)

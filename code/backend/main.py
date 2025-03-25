@@ -5,10 +5,16 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Gen AI Email Processing API")  # This creates the FastAPI app instance
 
+# Allowed origins (Update this for production)
+origins = [
+    "http://localhost:4200",  # Angular frontend (Local)
+    "https://vivek0912-genaiemailclassification.hf.space",  # Hugging Face frontend
+]
+
 #router = APIRouter()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Replace "*" with your frontend domain in production
+    allow_origins=origins,  # Replace "*" with your frontend domain in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
