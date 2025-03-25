@@ -21,6 +21,12 @@ This application provides a streamlined solution for managing and understanding 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](#) (if applicable)  
+
+## API Server Url
+ ```sh
+   Now, we can test the Email Processing API, which is deployed at the following link: 
+  [https://vivek0912-genaiemailclassification.hf.space/docs]
+```
 🖼️ Screenshots:
 
 ![Screenshot 1](link-to-image)
