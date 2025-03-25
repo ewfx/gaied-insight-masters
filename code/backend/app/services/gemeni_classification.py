@@ -5,9 +5,11 @@ import io
 import PyPDF2
 import docx
 import mimetypes
+
+from config.settings import Settings
    
 
-genai.configure(api_key="AIzaSyBdZsC0DG4OYjitl-OmFHLVqYOrBSFkV-c")
+genai.configure(api_key=Settings.GEMENI_API_KEY_TOKEN)
 
 # model = genai.GenerativeModel('gemini-pro')
 model = genai.GenerativeModel("gemini-2.0-flash-lite")

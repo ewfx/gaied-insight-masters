@@ -20,7 +20,7 @@ This application provides a streamlined solution for managing and understanding 
 ## Getting Started
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](https://drive.google.com/file/d/1xkrMITqHK2_loJ2AMb7FmfDHPI5fhmij/view?usp=drive_link) (if applicable)  
 
 ## API Server Url
 
@@ -29,7 +29,12 @@ This application provides a streamlined solution for managing and understanding 
 
 🖼️ Screenshots:
 
-![Screenshot 1](link-to-image)
+![Screenshot 1](screenshot1.png)
+![Screenshot 2](screenshot2.png)
+![Screenshot 3](screenshot3.png)
+![Screenshot 4](screenshot4.png)
+![Screenshot 5](screenshot5.png)
+
 
 ## 💡 Inspiration
 What inspired you to create this project? Describe the problem you're solving.
