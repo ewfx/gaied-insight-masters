@@ -1,16 +1,20 @@
-from sentence_transformers import SentenceTransformer, util
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
 
-model = SentenceTransformer("all-MiniLM-L6-v2")
-email_cache = {}
+vectorizer = TfidfVectorizer()
+email_cache = []
 
 def check_duplicate(email_text: str):
-    """Checks if an email is a duplicate based on semantic similarity."""
-    email_embedding = model.encode(email_text, convert_to_tensor=True)
-    
-    for existing_email, embedding in email_cache.items():
-        similarity = util.pytorch_cos_sim(email_embedding, embedding).item()
-        if similarity > 0.9:
-            return True, f"Similar to {existing_email} with score {similarity}"
-    
-    email_cache[email_text] = email_embedding
-    return False, None
+    global email_cache
+    email_cache.append(email_text)
+
+    if len(email_cache) > 1: #check if there is more than 1 email in cache.
+        tfidf_matrix = vectorizer.fit_transform(email_cache)
+        similarity_matrix = cosine_similarity(tfidf_matrix[-1:], tfidf_matrix[:-1])
+
+        if len(similarity_matrix[0]) > 0 and max(similarity_matrix[0]) > 0.9:
+            return True, f"Similar email found with similarity {max(similarity_matrix[0])}"
+        else:
+            return False, None
+    else: #if only 1 email, then it is not a duplicate.
+        return False, None

@@ -27,15 +27,16 @@
     </ul>
   </div>
 
-  <button mat-raised-button color="accent" (click)="processFiles()" [disabled]="processing || files.length === 0">
-    <span *ngIf="!processing">Process</span>
+  <button mat-raised-button color="accent" (click)="processFiles()" [disabled]="files.length === 0">
+    <span>Process</span>
+    <!-- <span *ngIf="!processing">Process</span>
     <span *ngIf="processing">Processing...</span>
-    <mat-icon *ngIf="processing" style="margin-left: 8px;">refresh</mat-icon>
+    <mat-icon *ngIf="processing" style="margin-left: 8px;">refresh</mat-icon> -->
   </button>
 
-  <mat-progress-bar *ngIf="processing" mode="indeterminate" style="margin-top: 10px;"></mat-progress-bar>
+  <!-- <mat-progress-bar *ngIf="processing" mode="indeterminate" style="margin-top: 10px;"></mat-progress-bar> -->
 
-  <div *ngIf="processComplete">
+  <!-- <div *ngIf="processComplete">
     <p>Processing Complete!</p>
-  </div>
+  </div> -->
 </div>

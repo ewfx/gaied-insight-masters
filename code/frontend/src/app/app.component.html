@@ -1,19 +1,34 @@
+
 <div class="container">
   <div class="header-section">
-    <h1 class="enterprise-title">Email Classification & Data Extraction</h1>
+    <h2 class="enterprise-title">Email Classification & Data Extraction</h2>
     <p class="enterprise-subtitle">Streamline your email data management with our robust system.</p>
   </div>
 
-  <div class="content-wrapper">
-    <div class="file-upload-section">
+  <div class="top-controls">
+    <div class="upload-section">
+      <h2>Upload Email Files</h2>
       <app-file-upload (filesProcessed)="onFilesProcessed($event)"></app-file-upload>
     </div>
 
-    <div class="results-section">
-      <div *ngIf="isProcessing" class="loading">
-        <p>Processing emails...</p>
-      </div>
-      <app-email-results [emailResponses]="emailResults"></app-email-results>
+    <div class="directory-process-section">
+      <h2>Process Emails from Directory</h2>
+      <p>Initiate classification of emails located in a pre-configured server directory.</p>
+      <button [disabled]="isProcessing" (click)="processDirectoryEmails()" class="directory-button"
+        title="This will trigger the server to read and classify email files from a directory path configured in the server's environment settings.">
+        Classify from Email Location
+      </button>
+      <small class="directory-details">Details: This button instructs the server to process email files found in a
+        directory path defined within the server's environment variables or configuration. No file selection is needed
+        on your part.</small>
     </div>
+  </div>
+
+  <div class="results-section">
+    <div *ngIf="isProcessing" class="loading-overlay">
+      <div class="loading-spinner"></div>
+      <p>Processing emails...</p>
+    </div>
+    <app-email-results [emailResponses]="emailResults"></app-email-results>
   </div>
 </div>

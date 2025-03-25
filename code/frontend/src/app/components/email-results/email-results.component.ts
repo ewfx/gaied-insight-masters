@@ -2,13 +2,7 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EmailService } from '../../service/email.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-
-interface EmailResponse {
-  email: string;
-  status: string;
-  message: string;
-}
-
+import { EmailResponse } from '../../emailresponse.model';
 
 @Component({
   selector: 'app-email-results',
@@ -22,7 +16,7 @@ export class EmailResultsComponent implements OnInit {
   hoveredRow: any;
 
   @Input() emailResponses: EmailResponse[] = [];
-  displayedColumns: string[] = ['email', 'status', 'message'];
+  displayedColumns: string[] = ['subject', 'sender', 'request_type','sub_request_type','confidence_score'];
   dataSource = new MatTableDataSource<EmailResponse>(this.emailResponses);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
