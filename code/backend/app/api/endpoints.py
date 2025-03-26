@@ -21,11 +21,11 @@ from config import settings
 router = APIRouter()
 
 # Define the directory where attachments will be saved
-SAVE_DIR = Path("data/attachments")
+SAVE_DIR = Path("tmp/attachments")
 SAVE_FILE_PATH = SAVE_DIR / settings.settings.ALLOWED_PRIORITY_RULES_FILENAME
 
 if not SAVE_DIR.exists():
-    SAVE_DIR.mkdir(parents=True)
+    SAVE_DIR.mkdir(parents=True,exist_ok=True)
     print(f"Directory created: {SAVE_DIR}")
 else:
     print(f"Directory already exists: {SAVE_DIR}")
