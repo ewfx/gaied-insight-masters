@@ -21,7 +21,7 @@ from config import settings
 router = APIRouter()
 
 # Define the directory where attachments will be saved
-SAVE_DIR = Path("tmp/attachments")
+SAVE_DIR = Path(settings.settings.DATA_DIRECTORY_ATTACHMENTS_PATH)
 SAVE_FILE_PATH = SAVE_DIR / settings.settings.ALLOWED_PRIORITY_RULES_FILENAME
 
 if not SAVE_DIR.exists():
@@ -57,14 +57,14 @@ async def process_email_files(files: List[UploadFile] = File(...)):
 @router.post("/process-email-directory/", response_model=List[EmailData])
 async def process_email_directory():
     """Processes email files from a directory specified in an environment variable."""
-    directory_path = Path("tmp/emails")
+    directory_path = Path(settings.settings.DATA_DIRECTORY_EMAILS_PATH)
     #directory_path = settings.settings.directory_path
 
     if not directory_path:
         raise HTTPException(status_code=400, detail="EMAIL_DIRECTORY_PATH environment variable not set.")
 
     if not os.path.exists(directory_path) or not os.path.isdir(directory_path):
-        raise HTTPException(status_code=400, detail="Invalid directory path.")
+        raise HTTPException(status_code=400, detail=f"Invalid directory path- {directory_path}")
 
     results = []
     email_files = []

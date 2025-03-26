@@ -17,6 +17,8 @@ class Settings:
     OCR_LANGUAGE = os.getenv("OCR_LANGUAGE", "eng")
     directory_path = os.getenv("EMAIL_DIRECTORY_PATH") or os.environ.get("EMAIL_DIRECTORY_PATH")  # Make configurable
     ALLOWED_PRIORITY_RULES_FILENAME=os.getenv("ALLOWED_PRIORITY_RULES_FILENAME") or os.environ.get("ALLOWED_PRIORITY_RULES_FILENAME")  # Make configurable
+    DATA_DIRECTORY_ATTACHMENTS_PATH=os.getenv("DATA_DIRECTORY_ATTACHMENTS_PATH") or os.environ.get("DATA_DIRECTORY_ATTACHMENTS_PATH")  # Make configurable
+    DATA_DIRECTORY_EMAILS_PATH=os.getenv("DATA_DIRECTORY_EMAILS_PATH") or os.environ.get("DATA_DIRECTORY_EMAILS_PATH")  # Make configurable
     # Debugging info
     print(f"Running in {ENV} mode with model path: {MODEL_NAME}")
     print(f"Running in {ENV} mode with TOKEN: {HUGGINGFACE_API_TOKEN}")
