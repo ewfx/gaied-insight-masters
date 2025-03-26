@@ -15,3 +15,5 @@ langchain==0.3.21
 python-dotenv
 PyPDF2
 google.generativeai
+python-multipart
+fastapi-cors

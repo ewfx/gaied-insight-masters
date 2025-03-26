@@ -1,4 +1,3 @@
-
 <div class="container">
   <div class="header-section">
     <h2 class="enterprise-title">Email Classification & Data Extraction</h2>
@@ -7,14 +6,42 @@
 
   <div class="top-controls">
     <div class="upload-section">
-      <h2>Upload Email Files</h2>
+      <h2>Upload Bulk Email Files</h2>
       <app-file-upload (filesProcessed)="onFilesProcessed($event)"></app-file-upload>
+    </div>
+
+    <div class="upload-rules-section">
+
+      <div style="padding: 20px;">
+        <h2>Configure and Upload Prioritization Extraction Rules</h2>
+      
+        <div style="border: 2px dashed #ccc; padding: 50px; text-align: center; margin-bottom: 20px;">
+          <p>Drag and drop files here, or click to select files.</p>
+
+          <input type="file" #fileInput style="display: none;" multiple (change)="onFileSelected($event)">
+          
+          <button mat-raised-button color="primary" (click)="fileInput.click()">Select Files</button>
+          <div></div>
+          <small class="upload-details">Upload a JSON only file containing prioritization rules.</small>
+        </div>
+        <div *ngIf="selectedRulesFile">
+          <h3>Selected File:</h3>
+          <ul>
+            <li>{{ selectedRulesFile.name }}</li>
+          </ul>
+        </div>
+        <button mat-raised-button color="accent" (click)="uploadRuleFile()" [disabled]="!selectedRulesFile">
+          <span>Process</span>
+        </button>
+        <h2>{{uploadMessage}}</h2>
+       
+      </div>
     </div>
 
     <div class="directory-process-section">
       <h2>Process Emails from Directory</h2>
       <p>Initiate classification of emails located in a pre-configured server directory.</p>
-      <button [disabled]="isProcessing" (click)="processDirectoryEmails()" class="directory-button"
+      <button [disabled]="isProcessing" (click)="processDirectoryEmails()" class="directory-button blue-button"
         title="This will trigger the server to read and classify email files from a directory path configured in the server's environment settings.">
         Classify from Email Location
       </button>

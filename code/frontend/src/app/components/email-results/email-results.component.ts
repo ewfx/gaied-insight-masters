@@ -16,7 +16,7 @@ export class EmailResultsComponent implements OnInit {
   hoveredRow: any;
 
   @Input() emailResponses: EmailResponse[] = [];
-  displayedColumns: string[] = ['subject', 'sender', 'request_type','sub_request_type','confidence_score'];
+  displayedColumns: string[] = ['subject', 'sender', 'request_type','sub_request_type','all_extracted_numbers','confidence_score'];
   dataSource = new MatTableDataSource<EmailResponse>(this.emailResponses);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
