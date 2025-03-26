@@ -57,7 +57,8 @@ async def process_email_files(files: List[UploadFile] = File(...)):
 @router.post("/process-email-directory/", response_model=List[EmailData])
 async def process_email_directory():
     """Processes email files from a directory specified in an environment variable."""
-    directory_path = settings.settings.directory_path
+    directory_path = Path("data/emails")
+    #directory_path = settings.settings.directory_path
 
     if not directory_path:
         raise HTTPException(status_code=400, detail="EMAIL_DIRECTORY_PATH environment variable not set.")
