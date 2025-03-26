@@ -21,7 +21,7 @@ This application provides a streamlined solution for managing and understanding 
 ## Getting Started
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
-📹 [Clieck me for Video Demo](https://drive.google.com/file/d/1xkrMITqHK2_loJ2AMb7FmfDHPI5fhmij/view?usp=drive_link) (if applicable)  
+📹 [Clieck me for Video Demo](https://drive.google.com/file/d/1KQIDEQ24ko5qGpP3MuEjFRh-MSs6qeJK/view?usp=drive_link) (if applicable)  
 
 ---
 ## API Server Url
@@ -35,9 +35,8 @@ This application provides a streamlined solution for managing and understanding 
 
 ![Screenshot 1](artifacts/demo/screenshot1.png)
 ![Screenshot 2](artifacts/demo/screenshot2.png)
-![Screenshot 3](artifacts/demo/Screenshot3.png)
+![Screenshot 3](artifacts/demo/screenshot3.png)
 ![Screenshot 4](artifacts/demo/screenshot4.jpg)
-![Screenshot 5](artifacts/demo/screenshot5.png)
 
 ---
 
