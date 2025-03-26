@@ -59,12 +59,12 @@ async def process_single_email(file_content: bytes, filename: str) -> Optional[d
             else:
                 classification_source = email_body_text  # default fallback
             
-            primary_result = classify_email_gemeni(email_data["subject"], classification_source)
+            primary_result = classify_email_gemeni(email_data["subject"], classification_source, rules)
 
             # special condition to check if priority is email content and email has multi thread then we 
             # have to compare confidence score with primary confidence score 
             if "email_content" in identification_order:
-                email_chain_result = classify_email_gemeni(email_data["subject"], email_chain_text) if email_chain_text else ("Unknown", "Unknown", "0")
+                email_chain_result = classify_email_gemeni(email_data["subject"], email_chain_text, rules) if email_chain_text else ("Unknown", "Unknown", "0")
                 email_chain_confidence = float(email_chain_result[2])
                 primary_email_confidence = float(primary_result[2])
                 if email_chain_confidence > primary_email_confidence and email_chain_confidence:
@@ -72,9 +72,9 @@ async def process_single_email(file_content: bytes, filename: str) -> Optional[d
 
         else:
             # 1. Separate Classification:
-            document_result = classify_email_gemeni(email_data["subject"], attachment_text) if attachment_text else ("Unknown", "Unknown", "0")
-            email_chain_result = classify_email_gemeni(email_data["subject"], email_chain_text) if email_chain_text else ("Unknown", "Unknown", "0")
-            primary_email_result = classify_email_gemeni(email_data["subject"], email_body_text)
+            document_result = classify_email_gemeni(email_data["subject"], attachment_text, rules) if attachment_text else ("Unknown", "Unknown", "0")
+            email_chain_result = classify_email_gemeni(email_data["subject"], email_chain_text, rules) if email_chain_text else ("Unknown", "Unknown", "0")
+            primary_email_result = classify_email_gemeni(email_data["subject"], email_body_text, rules)
 
             # 2. Confidence Score Comparison:
             document_confidence = float(document_result[2])

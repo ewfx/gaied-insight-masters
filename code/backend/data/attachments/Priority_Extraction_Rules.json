@@ -38,6 +38,12 @@
       "monthly_interest",
       "annual_percentage_rate",
       "reward_points"
+    ],
+    "classification_key_considerations": [
+      "If the email discusses adjusting lender shares or realigning facility distributions without changing the principal commitment, classify it as 'Adjustment'.",
+      "If the email explicitly requests an increase or decrease in the loan commitment, classify it as 'Commitment Change'.",
+      "If the email mentions financial movements, classify it under 'Money Movement'.",
+      "If the email thread or attachment contains the primary intent, use that as the basis for classification."
     ]
   }
 }

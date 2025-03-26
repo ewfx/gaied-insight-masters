@@ -86,6 +86,7 @@ async def process_email_directory():
                     sub_request_type=email_result["sub_request_type"],
                     confidence_score=email_result["confidence_score"],
                     duplicate_flag=email_result["duplicate_flag"],
+                    all_extracted_numbers=email_result["extracted_numbers_list"]
                 )
                 results.append(email_resp)
         except Exception as e:
