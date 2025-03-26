@@ -1,0 +1,179 @@
+Delivered-To: vivek0912@gmail.com
+Received: by 2002:a05:6400:1602:b0:23d:4f07:7e7f with SMTP id jo2csp3051730ecb;
+        Mon, 27 Nov 2023 02:38:09 -0800 (PST)
+X-Google-Smtp-Source: AGHT+IGLEfOnF5yvDoER+ZMHWxyMzDbWotR41u6nhpFsbmLSydag4Ziu5AJzSBdM6IeEKyJ0hoCD
+X-Received: by 2002:a05:6a20:8403:b0:18a:d7a8:5e5a with SMTP id c3-20020a056a20840300b0018ad7a85e5amr18704275pzd.58.1701081488732;
+        Mon, 27 Nov 2023 02:38:08 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1701081488; cv=none;
+        d=google.com; s=arc-20160816;
+        b=pbNUTCrpYChv2bK+Z1Pg8OeMdetYykiIdiAom1rtYpU++Ej+1dW49Acc3lnr3zqhhV
+         JVeFx/zfWZVZxAgxUJoIQwh2JRDtAZS88eb0qSweqQb4LyoMt6mzGmrpLp9NaiyG7LjV
+         AFX0S7rrJPL5LRtiw9whP8DMqagNrKqKibdkth+dM95EBbCqjkb/937u9wEdnE0RF2e8
+         CpAiTOl4wpQX7ziFzYt7IVv3BameNfrd0Itrx4inA11qzSqvNH6Xzms0s75DYt3kHG44
+         23BQeRKDCZ6YryJkvDItXu31Zwy7M969/YQRiFoiSucvhYn6yDltMyrz9ntul/hD25gq
+         /4Ug==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=identifier:mime-version:subject:message-id:to:from:dkim-signature
+         :date;
+        bh=W82Cd0+2oH1EO+ax1YCMst6ZSmBQwRRD/YGLafsMMVM=;
+        fh=XAqTyMFsr6b/S6AtUMCdgPkyrIM9jJcqmmKejvG0pRU=;
+        b=mg8DrExm+mfuXhJtnkMyODZfU4aQV3G/r5euFYKqZlo0sqzAnN6uc4QUdF9vkRtrxu
+         3+DJ0UEtOtxIbNCOrTHgTJ5I6xYf3KyEOdz9YZy7xLcCzMCVElhSvatVhKIMRvkDavy0
+         JICA1+VRX0S4Vik0wXl4qlBE+8zTUF398fkWmpdO18smDI7dAx/AsQN81HvtSDzyzXoL
+         GnDlHjQlI2ksFqpXWzk66U95dxq0hUBePWosxaPdJwl81Q3AU17r9cCS2cB/GjynXLOr
+         PN00eZ+XOp6tNZaftSZMJjzoV4WF/7OjhIqLYiJU5y8grtBe7+FBDkxoff+0w4u0Sv2R
+         YnKg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@hdfcbank.net header.s=mailer2048 header.b=MIEoOzSc;
+       spf=pass (google.com: domain of termloans.creditcard@hdfcbank.net designates 202.154.160.109 as permitted sender) smtp.mailfrom=TermLoans.CreditCard@hdfcbank.net;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hdfcbank.net
+Return-Path: <TermLoans.CreditCard@hdfcbank.net>
+Received: from 109.maila.powerelay.com (109.maila.powerelay.com. [202.154.160.109])
+        by mx.google.com with ESMTPS id o37-20020a634e65000000b005be029a66d1si9349004pgl.806.2023.11.27.02.38.07
+        for <VIVEK0912@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+        Mon, 27 Nov 2023 02:38:08 -0800 (PST)
+Received-SPF: pass (google.com: domain of termloans.creditcard@hdfcbank.net designates 202.154.160.109 as permitted sender) client-ip=202.154.160.109;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@hdfcbank.net header.s=mailer2048 header.b=MIEoOzSc;
+       spf=pass (google.com: domain of termloans.creditcard@hdfcbank.net designates 202.154.160.109 as permitted sender) smtp.mailfrom=TermLoans.CreditCard@hdfcbank.net;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=hdfcbank.net
+Date: Mon, 27 Nov 2023 02:38:08 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; s=mailer2048; d=hdfcbank.net;
+ h=From:To:Message-ID:Subject:MIME-Version:Content-Type;
+ i=TermLoans.CreditCard@hdfcbank.net;
+ bh=W82Cd0+2oH1EO+ax1YCMst6ZSmBQwRRD/YGLafsMMVM=;
+ b=MIEoOzScWvzE/xbl3XE4FNsd5pNodfIueyDQdPmm3e9QnW+9nKuqIJRJHmTni5rA6DoMmUXsgWLR
+   edUXLybBSxevTALnoM1ky8bdrVMBHicfwLCffx9rio2Hb0cyYouGBw4qB6inYIdmJlhsZ8BjID7q
+   zuSCo2raQJ2HgitqYSZ6VgNetZgdZjZ5PDIyZK5TRiriHhgWVYdb7Q4XKeFNCuJIM0jclfnyyI/7
+   SDIDawdM5cMaeyw8o1pyZnZdv+bgwyEeaziHy5UBlVfwq710sf6Z2AVqRodkrpjl09libiS9azCP
+   KEJ+7s5p0fr3ZFi0qhC5tWelW3PhcvIgrqMf0Q==
+Received: from HBSMTPPRDAP2.localdomain (202.154.168.193) by 105.maila.powerelay.com id hchop035eu4v for <VIVEK0912@GMAIL.COM>; Mon, 27 Nov 2023 16:07:56 +0530 (envelope-from <TermLoans.CreditCard@hdfcbank.net>)
+Received: from HBcosmosAPP48.hbctxdom.com (HBcosmosAPP48.hbctxdom.com [10.226.70.161])
+	by HBSMTPPRDAP2.localdomain (Postfix) with ESMTP id 22935401B660
+	for <VIVEK0912@GMAIL.COM>; Mon, 27 Nov 2023 16:07:55 +0530 (IST)
+From: TermLoans.CreditCard@hdfcbank.net
+To: VIVEK0912@GMAIL.COM
+Message-ID: <1956605351.6126.1701081475149.JavaMail.Poweruser@HBcosmosAPP48>
+Subject: SMARTEMI LOAN AMORTIZATION SCHEDULE 522852XXXXXX7861
+ 0000000000099843831
+MIME-Version: 1.0
+Content-Type: multipart/mixed; 
+	boundary="----=_Part_6124_2103959720.1701081475149"
+identifier: 117792539
+
+------=_Part_6124_2103959720.1701081475149
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: 7bit
+
+Dear Customer,  
+
+Thank you for choosing us as your preferred banking partner. We wish to confirm that your SmartEMI loan has been approved. Your EMI Repayment schedule for the loan approved is attached with this mail. 
+
+Click on the attachment provided with this mail and you will be prompted for a password. The password is 8-character in length - combination of the first four letters of your name in CAPITAL (as it appears on monthly statement) and the last 4 digits of your 16 digit  (14 digit in case of Diners Club International card) card number (if your card has been upgraded/reissued recently,   please use the last 4 digits of your new card number)
+
+We look forward to assisting you today and in the future. 
+
+Warm Regards
+
+This is a computer generated e-mail and does not require a signature. Please do not reply to this mail. This is sent from an unattended mail box. In case you have any queries/clarifications,   visit the link: www.hdfcbank.com ->personal-> customer-centre
+------=_Part_6124_2103959720.1701081475149
+Content-Type: application/octet-stream; name=271123ET54364043.pdf
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename=271123ET54364043.pdf
+
+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
+2wJC1/7/mmhsu12sJxXNSp8Ty82J3zzL1eFh+Xa0C6xivPGJK9aw370pvkTLp0ef543a6Pfv61qI
+p/MseZddGyWtvtg6RSbKiQw1iXD2JBMb5Z1zF085jImwM08h3m7f0GfHAwdx3Xm1O7KjE/zTSPYF
+LyZNrHkbHQnRSzzOrGWXl8+8liZ76jGzcTS6CyttiaxqQgtOZx9inBZSRIkXyX5+a1u1J9tkCdV4
+45G+yfthywq40WsArhalqOh6PuCEo/9up//k1J+aaTHnsSY6Ljik5NUKZW5kc3RyZWFtCmVuZG9i
+ago1IDAgb2JqCjw8L1BhcmVudCA0IDAgUi9Db250ZW50cyAzIDAgUi9UeXBlL1BhZ2UvUmVzb3Vy
+Y2VzPDwvUHJvY1NldCBbL1BERiAvVGV4dCAvSW1hZ2VCIC9JbWFnZUMgL0ltYWdlSV0vRm9udDw8
+L0YxIDEgMCBSL0YyIDIgMCBSPj4+Pi9NZWRpYUJveFswIDAgNTk1IDg0Ml0vQXJ0Qm94WzM2IDU0
+IDU1OSA3ODhdPj4KZW5kb2JqCjggMCBvYmoKPDwvTGVuZ3RoIDE2MjMvRmlsdGVyL0ZsYXRlRGVj
+b2RlPj5zdHJlYW0Kgi9ywBK2bBr5y3BuJm12QV2QUXyGIY2LCixJDcpm+sn49oXQasksqSOj0u/o
+Q7mursBFEyj1fhOcfbbdgNsZg1Gc2GWgLy5NN1SONCr1z/42F2n8OxiOu8KQXip34wK1gRcrlJge
+oDauD0S3RSwydFQimaK7HG71Uq92IPODtanyABGbipRIkZihMADdS5/Dosa1oGESbbegS9VzWvPL
+U6EVigOv7eWC9xyJxx1JDoSCAKL9DEP7oNeJzIqotJ9hDFkZsMRmyBQv8SGV7Xt2m6o8XhkdBaYq
+dgiX3a47gJaqE/6hcrTlbye5b+A/BtG2bA9f+Yoe/cEOL/aJPLVkMON4jgNlLGecw92+Y3W/AJ7R
+jecPAyuC8/RmrKsrH4btn2I1lUPT6U/UHK6cAakzeMB8p6rNqoF6yla7uWgw+Ci+AGJOZxai+Odv
+lAyg1nBU1KskKFRnmfzF/WdbilqVAaX7QYzH/Pc0ZZy781GkpH6j7IzTLh455GuKH8qAPczjDjJ0
+evnZiy1LgtY87jwL+8RH2bzlF6zUEXR/t8whSeAhKaVVhh1R/Qji4BRqgZR/DwOkeLi0Gm36N59j
+v2JepSNoXs9IMJNAYJO5WIaG0vmcvHpPyd5nfBtfa3r0flWkhXZ1ApLg7N1qc8Y4ZAYOaOtX3KRB
+Jcnx6wT2TGdtlhyY59xNnpfNTd3mHQ9lpdIWXSdM22Xm3wtR3j0EdY2GOT954rt05cCp8x99zhGo
+kB9WrM22sHVSU3+ajyNZ6v7ozTjOfL1rU2hYRfNsoc0k+kQFCE52SSwahYS7kxI8ViPBWTVQbxMh
+jYhZrmUzDmNW/XzgAkfg00YQieLZvmpoB6IS7YzzxxC+URvnmbkBgIo7i2s8LSbmtNSOyKrwNJ+h
+yp3ecjVOoG5dY/0WjneGa//9hO5p+TaQfRYnJlYX/0xIvpMo1qprh6crggE10UuKjYCZQqYQBzFT
+12679bhMqWDePm0tpQYk32erVlXY0fqozR6PpH3NMV1pFoMddQZlr8vC8nqQ/uvzS6lo1Xf/2AN/
+m88VMVg/b0N3E0fBzFghlTpbZWl5I6PGi+nCIwMr0BxtPlIaiBmatD13SvAi9qah8GyY6PQdXVPV
+HTT8Xtsfl4dJNFaPDvz4jXzHiG1lL3KUKL/iA39YwvQU8xMet0oDDP885Nkbl8ipOUCuf3RZWJ5O
+6hQ6H3esL54s5SNVUXjthOMTxet4WUowQnt1fb5dDv8mDKm2xtyVjLnYy6uPK0bSUA9vnXTXwyvr
+t2g+FK0djlcG7NF7DXVLvTlDSkjHWzUshVlhF9MCI+iwyfyaI7ShA10XS245tcC15T3Z84FW7DNm
+lvG3zeXg9ZF/5eWwyuqEO8LYzid1s1Ma2Q1cfQiOJUFuJVD+nkkjgn0GnPxiKdw9bC6HCGqp9zJh
+/TpiCkEV16zLlA3/2px7lYzexP3hqSFZ1jal0uwlF4iB6HrV4NsyEZ8ilq1o0ggklbBv7kZPR843
+uUACC/JKXC6tKBaQiFJdBCzmqNP0Ft2uNpmrsfPojnzgk9G88kDEefrhlQFfZl7D7v0iNxCdUT9K
+XXoTSBmLVXz4ZVISFvDNdXgwqzzB6aVhRXmk8mPDuGymznri3cZBIwbX3S+u+9Fvt+vQXSUgX9mF
+CLTg0FAleVY164cIIHl4OdD/Iw5fKjA/jyD+SpADrlfMPfS3YVSJ8zST7n7+5qOc1JfNAKbv7ZqG
+ITQqeF0yNP1iQifssK1FrvVk6PEmUxMhsN26YtotM9r3IxOtEBIOe4XKb4RePuKtvsfKIff2hV4Q
+XRfnfovYfUUgvSOHFFkE0lDpd+oJc53fthdiYkXXA4NYRoPgVkvu6C1h7K4PKkNTnvS+hXGmIask
+hve1dsCDhWyTw8pvwRGCn+62a4NWktlTo8ZhTklelMJH1wWe4ucDJrjiKWX1uq/302qXAT+kp6Fh
+I5OWX1yWqpaIJGBOwQMrKCijuJi3FEasMGDsOQZp7i9AP4YnzNwECh+TKjiIyi97GMV7BMnnsAl8
+vGXfOEh1TR8+jQoB+8W2rWbF7LBSS4mJWK5binADES+8DJL4Lh57C1QsmFptPu96wGwDnL+rC/FA
+6kdfmLBuvuekuJ2QJHBoo8GXzKRygwDxQALEizhZdsVe5AzEcthaCmVuZHN0cmVhbQplbmRvYmoK
+OSAwIG9iago8PC9QYXJlbnQgNCAwIFIvQ29udGVudHMgOCAwIFIvVHlwZS9QYWdlL1Jlc291cmNl
+czw8L1Byb2NTZXQgWy9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUldL0ZvbnQ8PC9G
+MSAxIDAgUi9GMiAyIDAgUi9GMyA2IDAgUi9GNCA3IDAgUj4+Pj4vTWVkaWFCb3hbMCAwIDU5NSA4
+NDJdL0FydEJveFszNiA1NCA1NTkgNzg4XT4+CmVuZG9iagoxIDAgb2JqCjw8L0Jhc2VGb250L0hl
+bHZldGljYS9UeXBlL0ZvbnQvRW5jb2RpbmcvV2luQW5zaUVuY29kaW5nL1N1YnR5cGUvVHlwZTE+
+PgplbmRvYmoKMiAwIG9iago8PC9CYXNlRm9udC9IZWx2ZXRpY2EtQm9sZC9UeXBlL0ZvbnQvRW5j
+b2RpbmcvV2luQW5zaUVuY29kaW5nL1N1YnR5cGUvVHlwZTE+PgplbmRvYmoKNiAwIG9iago8PC9C
+YXNlRm9udC9UaW1lcy1Cb2xkL1R5cGUvRm9udC9FbmNvZGluZy9XaW5BbnNpRW5jb2RpbmcvU3Vi
+dHlwZS9UeXBlMT4+CmVuZG9iago3IDAgb2JqCjw8L0Jhc2VGb250L1RpbWVzLVJvbWFuL1R5cGUv
+Rm9udC9FbmNvZGluZy9XaW5BbnNpRW5jb2RpbmcvU3VidHlwZS9UeXBlMT4+CmVuZG9iago0IDAg
+b2JqCjw8L0lUWFQoOvkHr1xyKS9UeXBlL1BhZ2VzL0NvdW50IDIvS2lkc1s1IDAgUiA5IDAgUl0+
+PgplbmRvYmoKMTAgMCBvYmoKPDwvVHlwZS9DYXRhbG9nL1BhZ2VzIDQgMCBSPj4KZW5kb2JqCjEx
+IDAgb2JqCjw8L1Byb2R1Y2VyKNJMr/uEGqXzps7QVVcBnHxGXqTnKS9Nb2REYXRlKP8i+LPCXHSm
+7KXX1kEGQY94OV3JlKBweSkvQ3JlYXRpb25EYXRlKP8i+LPCXHSm7KXX1kEGQY94OV3JlKBweSk+
+PgplbmRvYmoKMTIgMCBvYmoKPDwvVSAo8FlYHJqD/RF7PqpNXCn4Le4AAAAAAAAAAAAAAAAAAAAA
+KS9MZW5ndGggMTI4L1YgMi9PICiC4HXrPKFRPMppUy0T2kFenASiajh4XHKy/hJ7JDp2zdApL1Ag
+LTE4NTIvRmlsdGVyL1N0YW5kYXJkL1IgMz4+CmVuZG9iagp4cmVmCjAgMTMKMDAwMDAwMDAwMCA2
+NTUzNSBmIAowMDAwMDA0MTM5IDAwMDAwIG4gCjAwMDAwMDQyMjcgMDAwMDAgbiAKMDAwMDAwMDAx
+NSAwMDAwMCBuIAowMDAwMDA0NDk5IDAwMDAwIG4gCjAwMDAwMDIwNTQgMDAwMDAgbiAKMDAwMDAw
+NDMyMCAwMDAwMCBuIAowMDAwMDA0NDA5IDAwMDAwIG4gCjAwMDAwMDIyNDIgMDAwMDAgbiAKMDAw
+MDAwMzkzMyAwMDAwMCBuIAowMDAwMDA0NTY5IDAwMDAwIG4gCjAwMDAwMDQ2MTUgMDAwMDAgbiAK
+MDAwMDAwNDc0MCAwMDAwMCBuIAp0cmFpbGVyCjw8L1Jvb3QgMTAgMCBSL0lEIFs8NGE4OWI1NzQ0
+Njc0ZDU1ZjU4Mjg2MDJjOWVkMWNmNTQ+PDRiZGIzZmFiYmQxM2E4M2FjYzQwNWQ5Zjc1ZDlmMWM5
+Pl0vRW5jcnlwdCAxMiAwIFIvSW5mbyAxMSAwIFIvU2l6ZSAxMz4+CnN0YXJ0eHJlZgo0ODgwCiUl
+RU9GCg==
+------=_Part_6124_2103959720.1701081475149--
