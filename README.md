@@ -134,11 +134,11 @@ Solution: Implemented hybrid models (smaller local models + Gemini API for compl
      Open Swagger UI: [http://127.0.0.1:8000/docs]
    ```
 ## 📬 API Endpoints
-| Method |     Endpoint              | Description              |
-|--------|---------------------------|--------------------------|
-| POST   | `/process-emails-uploadl` | Upload and process email |
-| POST    | `/process-email-directory`| process email on go      |
-| PPST    | `/api/upload-priority-rules/`| set priority rules in json |
+| Method   |     Endpoint                  | Description                  |
+|--------  |-------------------------------|----------------------------|
+| POST     | `/process-emails-uploadl`     | Upload and process email   |
+| POST     | `/process-email-directory`    | process email on go        |
+| PPST     | `/api/upload-priority-rules/` | set priority rules in json |
 
 ## 🏗️ Tech Stack
 - 🔹 Frontend: Angular
