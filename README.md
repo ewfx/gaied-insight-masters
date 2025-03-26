@@ -56,6 +56,7 @@ What inspired you to create this project? Describe the problem you're solving.
 * **Duplicate Detection:** Identifies and flags potential duplicate emails based on their content.
 * **Clear Results Display:** Presents the classification results in a user-friendly grid table, showing key information like sender, subject, predicted request type, sub-request type, confidence score, and duplicate status.
 * **Loading Indicator:** Provides visual feedback during the email processing to keep users informed of the application's status.
+* ** Priority based Extraction **
 
 ---
 ## 🛠️ How We Built It
