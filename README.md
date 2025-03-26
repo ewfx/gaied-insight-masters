@@ -32,6 +32,10 @@ This application provides a streamlined solution for managing and understanding 
  Now, we can test the Email Processing API, which is deployed at the following link: 
 [https://vivek0912-genaiemailclassification.hf.space/docs]
 
+## Frontend UI Url
+ Now, we can access frontend ui for the Email Processing which is deployed at the following link:
+[https://genaiemailtriage.netlify.app]
+
 ---
 
 ## 🖼️ Test Artifacts Screenshots:
