@@ -1,3 +1,5 @@
+import re
+from typing import List, Optional
 import google.generativeai as genai
 import json
 import email
@@ -98,7 +100,6 @@ def analyze_intent(text):
         print(f"Gemini API error (Intent): {e}")
         return ""
 
-
 def classify_email_gemeni(subject, body):
     """Classifies an email based on request type and sub-request type."""
     results = []
@@ -120,8 +121,6 @@ def classify_email_gemeni(subject, body):
     }}
     """
    
-
-    
     response = model.generate_content(PROMPT)
 
     if response and hasattr(response, "_result"):
@@ -159,4 +158,59 @@ def get_primary_intent(email_content, attach_content):
     return response.text  # Extracted primary intent
 
 
+def extract_key_number_with_llm(context: str, rules: Optional[dict] = None) -> Optional[str]:
+    """
+    Uses the Gemini LLM to extract the most appropriate numerical value(s)
+    from the provided context. The prompt instructs the model to return a 
+    JSON array of objects if more than one key is found. Each object should
+    have the banking key as the key and the corresponding numerical value as its value.
+    
+    :param context: The text context from which key numerical value(s) should be extracted.
+    :param rules: Optional rules dictionary. If not provided, it will be loaded.
+    :return: The extracted key numerical value(s) as a JSON array (list of dicts), or None if not found.
+    """
+        
+    banking_keys = rules.get("priority_rules", {}).get("banking_numeric_keys", [])
+    keys_str = ", ".join(banking_keys)
+    
+    # Construct the prompt instructing the model to return a JSON array
+    prompt = (
+        f"Analyze the following context and extract all relevant numerical values that represent key banking references. "
+        f"Consider the following banking numeric keys as potential candidates: {keys_str}. "
+        f"If you find more than one, return them in a JSON array. Each element in the array should be an object with "
+        f"the banking key as the key and the corresponding number as its value. If only one is found, still return a JSON array "
+        f"with a single object. Return only the JSON array with no additional text.\n\n"
+        f"Context: {context}"
+    )
+    
+    try:
+        response = model.generate_content(prompt)
+        if response and hasattr(response, "_result"):
+            text_response = response._result.candidates[0].content.parts[0].text.strip()
+            # Clean the JSON response by removing code fences if they exist.
+            cleaned_response = clean_json_response(text_response)
+            try:
+                # Validate that the cleaned response is valid JSON.
+                parsed = json.loads(cleaned_response)
+                # Re-serialize the parsed object to get a standardized JSON string.
+                return json.dumps(parsed)
+            except Exception as json_err:
+                print(f"JSON parsing error: {json_err}")
+                print("Cleaned Response received:", cleaned_response)
+                return None
+    except Exception as e:
+        print(f"Error during LLM extraction: {e}")
+    
+    return None
+    
 
+def clean_json_response(text: str) -> str:
+    """
+    Removes markdown code fences and any extra backticks from the response.
+    """
+    # Remove leading and trailing backticks or code fence markers
+    # Remove a leading "```json" if present
+    text = re.sub(r"^```json", "", text).strip()
+    # Remove trailing "```" if present
+    text = re.sub(r"```$", "", text).strip()
+    return text

@@ -1,3 +1,4 @@
+/* Existing CSS */
 .container {
   font-family: sans-serif;
   padding: 80px;
@@ -21,17 +22,61 @@
 
 .top-controls {
   display: flex; /* Arrange upload and directory sections side-by-side */
-  gap: 20px; /* Space between the two sections */
+  gap: 20px; /* Space between the sections */
   margin-bottom: 20px; /* Space before the results section */
+  align-items: stretch; /* Make all sections the same height */
 }
 
 .upload-section,
-.directory-process-section {
+.directory-process-section,
+.upload-rules-section {
   flex: 1; /* Distribute available width equally */
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  display: flex; /* Enable flexbox for internal alignment */
+  flex-direction: column; /* Stack content vertically */
+}
+
+/* New CSS for the upload rules section */
+.upload-rules-section h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.5em;
+}
+
+.upload-rules-section input[type="file"] {
+  display: none; /* Hide the default file input */
+}
+
+.upload-rules-section .upload-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  text-align: center; /* Center the text */
+}
+
+.upload-rules-section .upload-details {
+  display: block;
+  color: #777;
+  font-size: 0.9em;
+  margin-top: auto; /* Push details to the bottom */
+}
+
+/* Style for the blue button */
+.blue-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.blue-button:hover {
+  background-color: #0056b3;
 }
 
 .directory-process-section {
@@ -55,18 +100,12 @@
 
 .directory-button {
   padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1em;
   transition: background-color 0.3s ease;
   margin-bottom: 5px; /* Space above the details text */
-}
-
-.directory-button:hover {
-  background-color: #0056b3;
+  text-align: center; /* Ensure text is centered */
 }
 
 .directory-details {
@@ -74,6 +113,7 @@
   color: #777;
   font-size: 0.9em;
   text-align: center;
+  margin-top: auto; /* Push details to the bottom */
 }
 
 .results-section {
@@ -129,4 +169,18 @@
   position: relative; /* Create a stacking context */
   z-index: 1; /* Ensure it's below the overlay when active */
   /* ... (Other results-section styles) ... */
+}
+
+h2 {
+  color: #3f51b5; /* Primary color from Angular Material */
+}
+
+button[mat-raised-button][color="primary"] {
+  background-color: #3f51b5; /* Primary color */
+  color: white;
+}
+
+button[mat-raised-button][color="accent"] {
+  background-color: #ff9800; /* Accent color */
+  color: white;
 }
