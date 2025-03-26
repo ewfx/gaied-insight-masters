@@ -14,7 +14,7 @@ export class EmailService {
   private baseUrl = environment.apiBaseUrl;
   constructor(private http: HttpClient) {}
   uploadFiles(formData: FormData): Observable<EmailResponse[]> {
-    return this.http.post<EmailResponse[]>(this.baseUrl + 'process-emails-upload', formData)
+    return this.http.post<EmailResponse[]>(this.baseUrl + 'process-emails-upload/', formData)
     .pipe(
       catchError((error) => {
         console.error('Error uploading files:', error);
