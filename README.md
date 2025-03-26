@@ -59,7 +59,6 @@ What inspired you to create this project? Describe the problem you're solving.
 Briefly outline the technologies, frameworks, and tools used in development.
 - 🔹 Frontend: Angular
 - 🔹 Backend:  FastAPI / 
-- 🔹 Database: PostgreSQL / Firebase
 - 🔹 Other: GEMINI
 - 🔹 Uvicorn: (ASGI Server)
 - 🔹 Scikit-learn & Pandas: (Data Processing)
@@ -138,13 +137,13 @@ Solution: Implemented hybrid models (smaller local models + Gemini API for compl
 | Method |     Endpoint              | Description              |
 |--------|---------------------------|--------------------------|
 | POST   | `/process-emails-uploadl` | Upload and process email |
-| GET    | `/process-email-directory`| process email on go      |
+| POST    | `/process-email-directory`| process email on go      |
+| PPST    | `/api/upload-priority-rules/`| set priority rules in json |
 
 ## 🏗️ Tech Stack
 - 🔹 Frontend: Angular
 - 🔹 Backend:  FastAPI / 
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: GEMINI
+- 🔹 LLM Model: GEMINI
 - 🔹 Uvicorn: (ASGI Server)
 - 🔹 Scikit-learn & Pandas: (Data Processing)
 ## 🛠 Environment Variables
