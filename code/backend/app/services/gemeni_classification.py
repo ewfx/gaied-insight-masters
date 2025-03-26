@@ -100,15 +100,22 @@ def analyze_intent(text):
         print(f"Gemini API error (Intent): {e}")
         return ""
 
-def classify_email_gemeni(subject, body):
+def classify_email_gemeni(subject, body, considerationsrules: Optional[dict] = None):
     """Classifies an email based on request type and sub-request type."""
     results = []
     categories_string = str(classification_categories)
+
+    key_considerations = considerationsrules.get("priority_rules", {}).get("classification_key_considerations", [])
+    keys_str = ", ".join(key_considerations)
+
     PROMPT = f"""
     Analyze the following email and classify it into the most appropriate Request Type and Sub Request Type based on its primary intent.
 
     Classification Categories:
     {categories_string}
+
+    Key Considerations for Classification:
+    {keys_str} 
 
     Email Subject: {subject}
     Email Content: {body}
