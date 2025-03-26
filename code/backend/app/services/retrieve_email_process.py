@@ -131,7 +131,7 @@ def load_priority_rules() -> dict:
     """
     # Get the rules directory and filename from environment variables
     RULES_FILENAME =  settings.settings.ALLOWED_PRIORITY_RULES_FILENAME
-    RULES_DIR = Path("tmp/attachments")
+    RULES_DIR = Path(settings.settings.DATA_DIRECTORY_ATTACHMENTS_PATH)
     # Build the full file path using pathlib
     RULES_FILE_PATH = Path(RULES_DIR) / RULES_FILENAME
     
