@@ -48,10 +48,9 @@ This application provides a streamlined solution for managing and understanding 
 ---
 ---
 ## Priority-Based Extraction and Key Consideration Rules JSON sample
- *The system determines which source of information to prioritize when extracting data. This helps ensure accurate classification and structured extraction based 
-   on predefined rules.
- *This section provides business-specific classification rules for extracting request types and sub-request types based on document/email content.
- *This ensures that the application dynamically applies the extraction and classification rules based on the JSON configuration.
+ The system determines which source of information to prioritize when extracting data. This helps ensure accurate classification and structured extraction based 
+ on predefined rules. This section provides business-specific classification rules for extracting request types and sub-request types based on document/email 
+ content.This ensures that the application dynamically applies the extraction and classification rules based on the JSON configuration.
  * The JSON file can be downloaded from README.md file and can get from swagger doc, modified, and re-uploaded using API endpoints.
  * Users can configure priority rules locally and then send updates via an API request.
 
