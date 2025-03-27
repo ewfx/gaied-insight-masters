@@ -87,46 +87,36 @@ Briefly outline the technologies, frameworks, and tools used in development.
 ---
 ## 🚧 Challenges We Faced
 🔹 Technical Challenges
-1️⃣ API Rate Limits & Quotas
+1. LLM model selection and fine tune based on domain so llm model can privide more accurate result bunI faced resource issues due to personal laotop configuration. I tried LlaMa, Falcon but due to tokens limitation I finalized gemini llm models.
+   
+2. API Rate Limits & Quotas
 Issue: The Google Gemini API has request rate limits, restricting the number of emails processed per minute.
 
 Solution: Implemented batch processing and cached responses to minimize API calls.
 
-2️⃣ Handling Long Emails (Token Limit)
+3. Handling Long Emails (Token Limit)
 Issue: Gemini models have input token limits, causing issues with long emails.
 
 Solution: Used text summarization before classification to reduce input size.
 
-3️⃣ Model Output Variability
+4. Model Output Variability
 Issue: Gemini sometimes generates inconsistent or ambiguous classifications.
 
 Solution: Used structured prompting and few-shot learning to improve reliability.
 
-4️⃣ Latency in Real-Time Classification
+5. Latency in Real-Time Classification
 Issue: API-based models introduce a delay in processing, especially for bulk emails.
 
-Solution: Optimized request handling and considered local inference with Gemini Nano.
-
-5️⃣ Security & Compliance
-Issue: Sending email data to a cloud-based API raised privacy concerns.
-
-Solution: Used data anonymization before processing emails.
 
 🔹 Non-Technical Challenges
-1️⃣ Understanding Business Requirements
+1. Understanding Business Requirements
 Issue: Stakeholders had different expectations for email classification categories.
 
-Solution: Conducted requirement workshops to finalize label categories (Spam, Urgent, Business, Phishing, etc.).
-
-2️⃣ User Trust in AI Predictions
+2. User Trust in AI Predictions
 Issue: Some users doubted the accuracy of AI-based classification.
 
 Solution: Provided explainability by adding confidence scores in responses.
 
-3️⃣ Cost Management
-Issue: The Gemini API incurs costs per request, making scalability expensive.
-
-Solution: Implemented hybrid models (smaller local models + Gemini API for complex cases).
 
 ---
 ## BACKEND API
