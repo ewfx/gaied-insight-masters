@@ -87,12 +87,12 @@ Briefly outline the technologies, frameworks, and tools used in development.
 ---
 ## 🚧 Challenges We Faced
 🔹 Technical Challenges
-1. LLM model selection and fine tune based on domain so llm model can privide more accurate result bunI faced resource issues due to personal laotop configuration. I tried LlaMa, Falcon but due to tokens limitation I finalized gemini llm models.
+1. LLM model selection and fine-tuning were performed based on the domain to ensure more accurate results. However, I faced resource constraints due to my personal laptop’s configuration. I initially experimented with LLaMA and Falcon, but due to token limitations, I ultimately finalized the Gemini LLM models.
    
 2. API Rate Limits & Quotas
 Issue: The Google Gemini API has request rate limits, restricting the number of emails processed per minute.
 
-Solution: Implemented batch processing and cached responses to minimize API calls.
+ Solution: Implemented batch processing and cached responses to minimize API calls.
 
 3. Handling Long Emails (Token Limit)
 Issue: Gemini models have input token limits, causing issues with long emails.
